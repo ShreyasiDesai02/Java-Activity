@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Score</title>
+</head>
+<body>
+    <div style="margin: 0 25% ;">
+        <h2>IPL Team Scores</h2>
+
+            Team1 Name: <input type="text" id="n1"> <br>
+            Team1 Score: <input type="text" id="r1">
+            <br> <br>
+            Team2 Name: <input type="text"  id="n2"> <br>
+            Team2 Score: <input type="text" id="r2">
+            <br>
+            
+            <button onclick="score()">score</button>
+            <p id="err"></p>
+            <p id="won"></p>
+
+            
+    </div>
+</body>
+
+<script>
+    function score() {
+    var n1 = document.getElementById("n1").value;
+    var n2 = document.getElementById("n2").value;
+
+    var score1 = document.getElementById("r1").value.split("/");
+    var score2 = document.getElementById("r2").value.split("/");
+
+    var r1 = score1[0];
+    var w1 = score1[1];
+
+    var r2 = score2[0];
+    var w2 = score2[1];
+    
+    // document.getElementById("won").innerHTML = n1+n2+r1+r2+w1+w2;
+
+    if (n1==n2) {
+        document.getElementById("err").innerHTML = "same name error";
+    }else if (w1>10 || w2>10) {
+        document.getElementById("err").innerHTML = "invalid wickets error";
+    }
+    else if (r1>r2) {
+        document.getElementById("won").innerHTML = n1+" won by "+(r1-r2)+" runs";
+    }
+    else if (r1<r2) {
+        document.getElementById("won").innerHTML = n2+" won by "+(10-w2)+"wickets";
+    }
+    else {
+        document.getElementById("won").innerHTML = "Tie";
+    }
+
+
+    }
+
+
+</script>
+</html>

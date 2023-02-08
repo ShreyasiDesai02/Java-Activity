@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class salary {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sh = new Scanner(System.in);
         System.out.println("Enter the salary:");
-        double salary= sc.nextInt();
+        double salary= sh.nextInt();
        
         System.out.println("Enter the shifts");
-        int shift = sc.nextInt();
+        int shift = sh.nextInt();
         if(salary>8000)
         {
             System.out.println("Salary too large");

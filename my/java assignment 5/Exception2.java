@@ -5,6 +5,7 @@ public class Exception2 {
 		try (Scanner s = new Scanner(System.in)) {
 			System.out.println("Number of overs :");
 			int over = s.nextInt();
+			s.nextLine();
 //			int n[] = new int[over];
 			int[] runs = new int[over];
 			
@@ -13,13 +14,15 @@ public class Exception2 {
 			for(int i=0;i<over;i++) {
 				System.out.println("over"+(i+1) +":");
 				 runs[i] = s.nextInt();
+				 
 			}
-			 
+			 s.nextLine();
 			
 			System.out.println("Enter the number of over");
 			int number = s.nextInt();
-			if(number>=over || number<= over) {
-				System.out.println("runs scored in over"+number+":"+runs[over]);
+			s.nextLine();
+			if(number<over || number>0) {
+				System.out.println("runs scored in over"+number+":"+runs[number]);
 			}
 			
 			}

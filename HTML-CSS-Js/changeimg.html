@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <style>
+      img {
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js">
+    </script>
+  </head>
+  <body>
+    <div class="imgDiv">
+      <img id="your-image" src='fb.png' alt="Image" />
+    </div>
+    <script>
+      $(document).ready(function() {
+          $('img').on({
+              'click': function() {
+                let src = ($(this).attr('src') === 'fb.png') ?
+                  'gp.png' :
+                  'fb.png';
+                $(this).attr('src', src);
+              }
+            });
+        });
+    </script>
+  </body>
+</html>

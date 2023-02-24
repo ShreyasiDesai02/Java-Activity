@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+
+        table, th, td {
+
+  border:1px solid black;
+
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <form>
+        <div class = "full">
+        <div class = "box">
+        <div class = "icons">
+
+        <label for="Playerid">Player ID   </label>
+
+        <input type="number" id="playerid" name="playerid">
+
+        <br><br>
+
+        <label for="player Name">Player Name</label>
+
+        <input type="text" id="playername" name="playername">
+
+        <br>
+        <br>
+
+        <label for="runs">Runs   </label>
+
+        <input type="number" id="runs" name="runs">
+
+        <br>
+
+        <br>
+        </div>
+
+        <button type="button" id="AddData">Add Data</button>
+
+        <button type="button" onclick="removePlayer()">Remove</button>
+    <style>
+    .box{
+    
+    width: 380px;
+    height: 480px;
+    position: center;
+    margin: 6% auto;
+    background-color: aliceblue;
+    border-left: 1px;
+    border-right: 1px;
+    border-top: 1px;
+    border-bottom: 1px;
+    padding: 5px;
+        }
+    .icons{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    background : transparent; 
+        }
+    </style>
+       
+    
+    </form>
+
+
+
+    <table id="PlayerTable">
+
+        <thead>
+
+        <tr>
+
+            <th>Player Id   </th>
+            
+
+            <th>Player Name</th>
+
+            <th>Runs </th>
+
+          </tr>
+
+          </thead>
+
+          <tbody id="table-body">
+
+          </tbody>
+
+    </table>
+</div>
+    <style>
+    .full{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover ;
+    position: absolute;
+    background-color:rgba(241, 245, 233, 0.993);
+    }
+</style>
+</div>
+
+
+
+    <script>
+
+        function removePlayer()
+
+        {
+
+            var table = document.getElementById("PlayerTable");
+
+            var rowIndex = table.rows.length-1;
+
+
+
+            table.deleteRow(1);
+
+        }
+
+
+
+  const addBtn = document.getElementById('AddData');
+
+  const tableBody = document.getElementById('table-body');
+
+
+
+  addBtn.addEventListener('click', () => {
+
+    // Retrieve the input field values
+
+    const playerId = document.getElementById('playerid').value;
+
+    const playerName = document.getElementById('playername').value;
+
+    const runs = document.getElementById('runs').value;
+
+
+
+    // Create a new row in the HTML table with the input field values
+
+    const newRow = tableBody.insertRow();
+
+    const cell1 = newRow.insertCell(0);
+
+    const cell2 = newRow.insertCell(1);
+
+    const cell3 = newRow.insertCell(2);
+
+    cell1.innerHTML = playerId;
+
+    cell2.innerHTML = playerName;
+
+    cell3.innerHTML = runs;
+
+
+
+    // Clear the input fields
+
+    document.getElementById('playerid').value = '';
+
+    document.getElementById('playername').value = '';
+
+    document.getElementById('runs').value = '';
+
+  });
+
+
+
+    </script>
+
+</body>
+
+</html>

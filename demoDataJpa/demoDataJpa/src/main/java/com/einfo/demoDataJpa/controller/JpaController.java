@@ -48,4 +48,20 @@ public class JpaController {
 			mv.addObject("movies",li);
 			return mv;
 		}
+		
+		@RequestMapping("viewmoviebyLang")
+		public ModelAndView viewbylang(@RequestParam("Lang") String Lang) {
+			ModelAndView mv = new ModelAndView("viewbylang");
+			List<Movie> list = md.findMoviebyLanguage(Lang);
+			mv.addObject("movies", list);
+			mv.addObject("Lang", Lang);
+			return mv;
+		}
+		
+		@RequestMapping("editMovie")
+		public ModelAndView geteditmovie(@RequestParam("id") int id) {
+			ModelAndView mv = new ModelAndView("editMovie");
+			Movie m = md.getById(id);
+			return new ModelAndView("editMovie");
+		}
 }

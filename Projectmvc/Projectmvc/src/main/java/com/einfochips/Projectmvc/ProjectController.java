@@ -18,7 +18,7 @@ public class ProjectController {
 	@Autowired //dependy injection for spring mvc
 	Userjdbc uj;
 	
-	@RequestMapping("home")
+	@RequestMapping("Home")
 	public ModelAndView gethome()
 	{
 		return new ModelAndView("home");

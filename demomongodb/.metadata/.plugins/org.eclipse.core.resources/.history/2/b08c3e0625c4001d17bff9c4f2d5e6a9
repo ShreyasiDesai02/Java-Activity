@@ -1,0 +1,48 @@
+package com.einfo.demospringmongo.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.einfo.demospringmongo.Model.Trainee;
+import com.einfo.demospringmongo.Repo.TraineeRepo;
+
+@RestController
+public class TraineeController {
+	
+	@Autowired
+	TraineeRepo tr;
+	
+	@RequestMapping("/insertTrainee")
+	public ModelAndView insertTrainee() {
+		ModelAndView mv = new ModelAndView("success");
+		Trainee t= new Trainee(2,"Akhil","Ahmedabad");
+		tr.save(t);
+		return mv;
+	}
+	
+	@RequestMapping("/viewTrainee")
+	public List<Trainee> getTrainee(){
+		return tr.findAll();
+	}
+	
+	@RequestMapping("/updateTrainee")
+	public Trainee updateTrainee(){
+		return tr.save(new Trainee(2,"Shailesh","Viramgam"));
+	}
+	
+	@RequestMapping("/countTrainee")
+	public long countTrainee(){
+		return tr.count();
+	}
+	
+	@RequestMapping("traineebyloc")
+	public List<Trainee> getTraineeLoc(){
+	return	tr.getTraineeByLocation();
+		
+	}
+	
+}

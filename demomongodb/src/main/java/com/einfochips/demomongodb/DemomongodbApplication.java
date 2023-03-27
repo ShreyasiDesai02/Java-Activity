@@ -11,6 +11,7 @@ public class DemomongodbApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemomongodbApplication.class, args);
+		System.out.println("System started");
 	}
 
 }
